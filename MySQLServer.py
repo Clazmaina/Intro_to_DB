@@ -6,7 +6,7 @@ def create_alx_book_store_database(host, user, password):
         connection = mysql.connector.connect(host=host, user=user, password=password)
         cursor = connection.cursor()
 
-        create_database_query = "CREATE DATABASE alx_book_store"
+        create_database_query = "CREATE DATABASE IF NOT EXISTS alx_book_store"
         cursor.execute(create_database_query)
         connection.commit()
 
